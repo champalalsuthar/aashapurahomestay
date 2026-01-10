@@ -49,12 +49,12 @@ export default function PromoStrip() {
           >
             For pricing, special offers, discounts and availability WhatsApp on
             <a
-              href="https://wa.me/919489573984"
+              href="https://wa.me/917014538182"
               target="_blank"
               className="inline-flex items-center gap-2 font-bold ml-1
               hover:underline"
             >
-              9489573984
+              7014538182
               <FaWhatsapp className="text-green-400 text-xl" />
             </a>
           </p>

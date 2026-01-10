@@ -53,7 +53,7 @@ export default function TermsConditionsPage() {
             <br />
             <strong>Email:</strong> aashapurahomestay@gmail.com
             <br />
-            <strong>Phone:</strong> +91 86962 82980
+            <strong>Phone:</strong> +91 7014538182
           </p>
         </div>
       </div>

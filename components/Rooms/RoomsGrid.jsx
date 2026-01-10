@@ -70,7 +70,7 @@ export default function RoomsGrid() {
                 </button>
 
                 <a
-                  href="tel:+918696282980"
+                  href="tel:+917014538182"
                   className="px-4 py-2 rounded-md text-sm font-semibold
                   bg-gray-800 text-white hover:bg-gray-900 transition"
                 >

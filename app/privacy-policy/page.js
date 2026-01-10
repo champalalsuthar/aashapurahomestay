@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
             <br />
             <strong>Email:</strong> aashapurahomestay@gmail.com
             <br />
-            <strong>Phone:</strong> +91 86962 82980
+            <strong>Phone:</strong> +91 70145 38182
           </p>
         </div>
       </div>

@@ -22,8 +22,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden">
-      
+    <section className="relative w-full h-[30vh] max-h-[520px] md:max-h-none md:h-[90vh] overflow-hidden">
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0">
         {images.map((img, i) => (
@@ -41,7 +40,7 @@ export default function HeroSection() {
                 alt="Homestay Banner"
                 fill
                 priority
-                className="object-cover scale-110"
+                className="object-cover md:scale-110"
               />
             </motion.div>
           )

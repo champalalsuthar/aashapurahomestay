@@ -100,13 +100,13 @@ export default function ContactClient() {
           <div className="space-y-4 text-gray-700">
             <p className="flex items-center gap-3">
               <FaPhoneAlt className="text-blue-600" />
-              +91 86962 82980
+              +91 70145 38182
             </p>
 
             <p className="flex items-center gap-3">
               <FaWhatsapp className="text-green-500" />
               <a
-                href="https://wa.me/918696282980"
+                href="https://wa.me/917014538182"
                 target="_blank"
                 className="hover:underline"
               >
