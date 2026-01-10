@@ -9,6 +9,7 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from 'react-icons/fa'
+import { FaHome, FaInfoCircle, FaFileContract, FaUserShield } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -45,10 +46,10 @@ export default function Footer() {
           <p className="flex items-center gap-3">
             <FaEnvelope className="text-blue-500" />
             <a
-              href="mailto:book@aashapurahomestay.com"
+              href="mailto:aashapurahomestay@gmail.com"
               className="hover:text-blue-400"
             >
-              book@aashapurahomestay.com
+              aashapurahomestay@gmail.com
             </a>
           </p>
         </div>
@@ -61,47 +62,88 @@ export default function Footer() {
 
           <ul className="space-y-3 text-sm text-gray-300">
             <li>
-              <Link href="/rooms" className="hover:text-blue-400 transition">
+              <Link
+                href="/posts/dormitory-homestay-ac-nonac"
+                className="hover:text-blue-400 transition"
+              >
                 Dormitory & Homestay – AC / Non-AC
               </Link>
             </li>
             <li>
-              <Link href="/rooms" className="hover:text-blue-400 transition">
+              <Link
+                href="/posts/affordable-stay-in-pune"
+                className="hover:text-blue-400 transition"
+              >
                 Affordable stay in Pune
               </Link>
             </li>
             <li>
-              <Link href="/rooms" className="hover:text-blue-400 transition">
+              <Link
+                href="/posts/comfortable-long-short-stays"
+                className="hover:text-blue-400 transition"
+              >
                 Comfortable long & short stays
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* SOCIAL LINKS */}
+
+
+        {/* Quick LINKS */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4 tracking-wide">
-            FOLLOW US ON
+            Quick Links
           </h3>
 
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-3 hover:text-blue-400 transition cursor-pointer">
-              <FaFacebookF /> Facebook
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-3 hover:text-blue-400 transition"
+              >
+                <FaHome className="text-blue-500" /> Home
+              </Link>
             </li>
-            <li className="flex items-center gap-3 hover:text-blue-400 transition cursor-pointer">
-              <FaInstagram /> Instagram
+
+            <li>
+              <Link
+                href="/aboutus"
+                className="flex items-center gap-3 hover:text-blue-400 transition"
+              >
+                <FaInfoCircle className="text-blue-500" /> About Us
+              </Link>
             </li>
-            <li className="flex items-center gap-3 hover:text-blue-400 transition cursor-pointer">
-              <FaTwitter /> Twitter
+
+            <li>
+              <Link
+                href="/contactus"
+                className="flex items-center gap-3 hover:text-blue-400 transition"
+              >
+                <FaPhoneAlt className="text-blue-500" /> Contact Us
+              </Link>
             </li>
-            <li className="flex items-center gap-3 hover:text-blue-400 transition cursor-pointer">
-              <FaPinterestP /> Pinterest
+
+            <li>
+              <Link
+                href="/terms-conditions"
+                className="flex items-center gap-3 hover:text-blue-400 transition"
+              >
+                <FaFileContract className="text-blue-500" /> Terms & Conditions
+              </Link>
             </li>
-            <li className="flex items-center gap-3 hover:text-blue-400 transition cursor-pointer">
-              <FaYoutube /> Youtube
+
+            <li>
+              <Link
+                href="/privacy-policy"
+                className="flex items-center gap-3 hover:text-blue-400 transition"
+              >
+                <FaUserShield className="text-blue-500" /> Privacy Policy
+              </Link>
             </li>
           </ul>
         </div>
+
 
         {/* CONTACT INFO */}
         <div>
@@ -118,16 +160,16 @@ export default function Footer() {
           </p>
 
           <p className="text-sm mb-3 text-gray-300">
-            Location: Katraj, Pune
+            Location : Railway station ring road, behind Hotel Dollar, railway fatak Kutch bhuj, 370001
           </p>
 
           <p className="text-sm text-gray-300">
             Email:{' '}
             <a
-              href="mailto:contact@aashapurahomestay.com"
+              href="mailto:aashapurahomestay@gmail.com"
               className="hover:text-blue-400"
             >
-              contact@aashapurahomestay.com
+              aashapurahomestay@gmail.com
             </a>
           </p>
         </div>

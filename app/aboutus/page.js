@@ -52,12 +52,12 @@ export default function AboutPage() {
           <FaMapMarkerAlt className="text-blue-700 text-4xl mb-4" />
           <h3 className="text-xl font-semibold mb-3">Our Location</h3>
           <p className="text-gray-600 text-sm leading-relaxed">
-            Conveniently located in Katraj, Pune — well connected and suitable
+            Conveniently located in Kutch bhuj, bhuj — well connected and suitable
             for corporate, family, and student stays.
           </p>
         </div>
 
-      </section>
+      </section>  
     </main>
   )
 }

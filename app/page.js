@@ -7,12 +7,12 @@ import WhyChooseUs from "../components/HomePage/WhyChooseUs";
 
 export default function Home() {
     return (
-        <main className="p-6">
+        <main className="p-6 mt-16">
             <HeroSection />
             <PromoStrip />
-            <HomeBookingForm />
             <WhyChooseUs />
             <Testimonials/>
+            <HomeBookingForm />
             <Locations />
         </main>
     )

@@ -58,7 +58,7 @@ export default function Locations() {
               {/* MAP */}
               <div className="relative h-56">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1648.4575347394475!2d69.67182410477614!3d23.26566972070905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAddress%20.%20Railway%20station%20ring%20road%2C%20behind%20Hotel%20Dollar%2C%20railway%20fatak%20Kutch%20bhuj%20370001!5e0!3m2!1sen!2sin!4v1767725059547!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.382949343627!2d69.6724359!3d23.265531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950e3a5e3d96aed%3A0x26c9a4e619cabf28!2sAashapura%20home%20stay!5e0!3m2!1sen!2sin!4v1768020728984!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

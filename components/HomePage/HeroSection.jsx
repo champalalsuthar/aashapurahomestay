@@ -69,11 +69,11 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 1 }}
           className="mt-4 text-lg md:text-xl text-white/90 max-w-2xl"
         >
-          Situated in the heart of Coimbatore.
+          Situated in the heart of Kutch-Bhuj.
         </motion.p> */}
 
         {/* CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.8 }}
@@ -84,7 +84,7 @@ export default function HeroSection() {
             text-white shadow-xl hover:scale-105 transition">
             Book Your Stay
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

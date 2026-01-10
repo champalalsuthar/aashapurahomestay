@@ -36,7 +36,7 @@ function Navbar() {
 
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center space-x-8">
-          {['Home', 'Rooms', 'About Us', 'Contact Us'].map((item, i) => (
+          {['Home', 'Rooms','Posts', 'About Us', 'Contact Us'].map((item, i) => (
             <li key={i}>
               <Link
                 href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
@@ -68,7 +68,7 @@ function Navbar() {
         ${nav ? 'top-full opacity-100' : '-top-[400px] opacity-0'}`}
       >
         <ul className="flex flex-col py-6 space-y-4 text-center">
-          {['Home', 'Rooms', 'About Us', 'Contact Us'].map((item, i) => (
+          {['Home', 'Rooms', 'Posts', 'About Us', 'Contact Us'].map((item, i) => (
             <li key={i}>
               <Link
                 href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
