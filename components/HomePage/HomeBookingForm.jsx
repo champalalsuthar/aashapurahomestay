@@ -1,13 +1,14 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { use, useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
+import { sendEmailToBackend } from '../../lib/sendEmail'
+import { useRouter } from 'next/navigation'
 
 export default function HomeBookingForm() {
   const [activeTab, setActiveTab] = useState('booking')
   const [loading, setLoading] = useState(false)
-
+  const router = useRouter();
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -98,42 +99,54 @@ export default function HomeBookingForm() {
 
     const validationErrors = validate()
     setErrors(validationErrors)
-
-    // stop if errors
     if (Object.keys(validationErrors).length > 0) return
 
     setLoading(true)
+
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        {
-          name: values.name,
-          email: values.email,
-          contact: values.contact,
-          checkin_date: values.checkin_date,
-          checkout_date: values.checkout_date,
-          purpose: values.purpose,
-          message: values.message,
-          tab: activeTab,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+      const html_msg_body = `
+      <div style="font-family:Arial,sans-serif; padding:16px;">
+        <h2 style="color:#1d4ed8;">New Booking Enquiry</h2>
 
-      alert('Booking enquiry sent successfully!')
+        <table style="width:100%; border-collapse:collapse;">
+          <tr><td><b>Name</b></td><td>${values.name}</td></tr>
+          <tr><td><b>Email</b></td><td>${values.email}</td></tr>
+          <tr><td><b>Mobile</b></td><td>${values.contact}</td></tr>
+          <tr><td><b>Check-in</b></td><td>${values.checkin_date}</td></tr>
+          <tr><td><b>Check-out</b></td><td>${values.checkout_date}</td></tr>
+          <tr><td><b>Purpose</b></td><td>${values.purpose}</td></tr>
+          <tr><td><b>Message</b></td><td>${values.message || "-"}</td></tr>
+        </table>
 
+        <hr/>
+        <p style="font-size:12px;color:#64748b;">
+          Maa Aashapura Homestay Website - Booking Form
+        </p>
+      </div>
+    `
+
+      await sendEmailToBackend({
+        type: "booking",
+        from_name: values.name,
+        from_email: values.email,
+        subject: `Booking Enquiry - ${values.name} (${values.checkin_date} to ${values.checkout_date})`,
+        html_msg_body,
+      })
+
+      alert("Booking enquiry sent successfully!")
       setValues({
-        name: '',
-        email: '',
-        contact: '',
-        checkin_date: '',
-        checkout_date: '',
-        purpose: 'Purpose of visit',
-        message: '',
+        name: "",
+        email: "",
+        contact: "",
+        checkin_date: "",
+        checkout_date: "",
+        purpose: "Purpose of visit",
+        message: "",
       })
       setErrors({})
-    } catch (error) {
-      alert('Something went wrong. Please try again.')
+      router.push('/')
+    } catch (err) {
+      alert(err.message || "Something went wrong. Please try again.")
     } finally {
       setLoading(false)
     }
@@ -152,7 +165,7 @@ export default function HomeBookingForm() {
         rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.25)]
         p-6 md:p-8 mb-4 "
       >
-        
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +197,7 @@ export default function HomeBookingForm() {
           ))}
         </div> */}
 
-      
+
 
         {/* FORM */}
         <form onSubmit={sendEmail} className="space-y-4">

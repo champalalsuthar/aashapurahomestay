@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa'
+import { sendEmailToBackend } from '../../lib/sendEmail'
 
 export default function ContactClient() {
   const [loading, setLoading] = useState(false)
@@ -59,33 +60,41 @@ export default function ContactClient() {
     setLoading(true)
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        {
-          name: values.name,
-          email: values.email,
-          phone: values.phone,
-          message: values.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+      const html_msg_body = `
+      <div style="font-family:Arial,sans-serif; padding:16px;">
+        <h2 style="color:#1d4ed8;">New Contact Message</h2>
+        <p><b>Name:</b> ${values.name}</p>
+        <p><b>Email:</b> ${values.email}</p>
+        <p><b>Phone:</b> ${values.phone}</p>
+        <p><b>Message:</b></p>
+        <p style="padding:10px; background:#f1f5f9; border-radius:8px;">
+          ${values.message}
+        </p>
+        <hr/>
+        <p style="font-size:12px;color:#64748b;">
+          Maa Aashapura Homestay Website - Contact Form
+        </p>
+      </div>
+    `
 
-      alert('Message sent successfully!')
-
-      setValues({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
+      await sendEmailToBackend({
+        type: "contact",
+        from_name: values.name,
+        from_email: values.email,
+        subject: `Contact Enquiry - ${values.name}`,
+        html_msg_body,
       })
+
+      alert("Message sent successfully!")
+      setValues({ name: "", email: "", phone: "", message: "" })
       setErrors({})
-    } catch (err) {
-      alert('Failed to send message. Please try again.')
+    } catch (err) { 
+      alert(err.message || "Failed to send message. Please try again.")
     } finally {
       setLoading(false)
     }
   }
+
 
   return (
     <main className="bg-gradient-to-b from-blue-50 to-white py-20 mt-20">
